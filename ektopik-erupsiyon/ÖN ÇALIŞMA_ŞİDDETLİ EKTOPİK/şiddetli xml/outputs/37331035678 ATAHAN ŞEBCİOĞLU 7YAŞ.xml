@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\37331035678 ATAHAN ŞEBCİOĞLU 7YAŞ.jpg</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>846</xmin>
+					<ymin>627</ymin>
+					<xmax>1150</xmax>
+					<ymax>909</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>1836</xmin>
+					<ymin>571</ymin>
+					<xmax>2114</xmax>
+					<ymax>915</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>804</xmin>
+					<ymin>839</ymin>
+					<xmax>1206</xmax>
+					<ymax>1223</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>1780</xmin>
+					<ymin>857</ymin>
+					<xmax>2148</xmax>
+					<ymax>1255</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696573570797</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

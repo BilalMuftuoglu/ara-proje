@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\37715023390 MUSTAFA KENAN ALTAY 7YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>934</xmin>
+					<ymin>667</ymin>
+					<xmax>1196</xmax>
+					<ymax>991</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name>hafif</name>
+				<bndbox>
+					<xmin>1808</xmin>
+					<ymin>695</ymin>
+					<xmax>2050</xmax>
+					<ymax>993</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>856</xmin>
+					<ymin>961</ymin>
+					<xmax>1138</xmax>
+					<ymax>1279</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>1764</xmin>
+					<ymin>957</ymin>
+					<xmax>2078</xmax>
+					<ymax>1249</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696454222304</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

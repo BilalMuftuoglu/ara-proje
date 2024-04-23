@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\74731066048 YIĞITHASAN OK 8YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>924</xmin>
+					<ymin>486</ymin>
+					<xmax>1214</xmax>
+					<ymax>832</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>1798</xmin>
+					<ymin>788</ymin>
+					<xmax>2120</xmax>
+					<ymax>1102</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>880</xmin>
+					<ymin>766</ymin>
+					<xmax>1220</xmax>
+					<ymax>1124</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696454609527</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

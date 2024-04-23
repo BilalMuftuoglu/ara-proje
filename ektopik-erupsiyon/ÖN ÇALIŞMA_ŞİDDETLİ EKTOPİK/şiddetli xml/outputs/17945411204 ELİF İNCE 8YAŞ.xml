@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\17945411204 ELİF İNCE 8YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>954</xmin>
+					<ymin>666</ymin>
+					<xmax>1218</xmax>
+					<ymax>944</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name>hafif</name>
+				<bndbox>
+					<xmin>1754</xmin>
+					<ymin>682</ymin>
+					<xmax>2050</xmax>
+					<ymax>982</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696453838445</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

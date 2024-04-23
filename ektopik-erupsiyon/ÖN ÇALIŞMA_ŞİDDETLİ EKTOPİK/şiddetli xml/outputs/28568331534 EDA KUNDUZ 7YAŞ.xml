@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\28568331534 EDA KUNDUZ 7YAŞ.jpg</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1816</xmin>
+					<ymin>680</ymin>
+					<xmax>2126</xmax>
+					<ymax>984</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>972</xmin>
+					<ymin>625</ymin>
+					<xmax>1238</xmax>
+					<ymax>947</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696454012990</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

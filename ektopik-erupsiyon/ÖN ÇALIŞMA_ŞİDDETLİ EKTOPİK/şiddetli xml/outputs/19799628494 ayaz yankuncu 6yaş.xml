@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\19799628494 ayaz yankuncu 6yaş.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>814</xmin>
+					<ymin>696</ymin>
+					<xmax>1080</xmax>
+					<ymax>1026</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1872</xmin>
+					<ymin>742</ymin>
+					<xmax>2184</xmax>
+					<ymax>990</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>1862</xmin>
+					<ymin>927</ymin>
+					<xmax>2166</xmax>
+					<ymax>1257</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696453923150</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\37949014164 HASAN ŞENYURT 6YAŞ.jpg</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1746</xmin>
+					<ymin>384</ymin>
+					<xmax>2114</xmax>
+					<ymax>690</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>902</xmin>
+					<ymin>465</ymin>
+					<xmax>1222</xmax>
+					<ymax>765</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>890</xmin>
+					<ymin>703</ymin>
+					<xmax>1224</xmax>
+					<ymax>1019</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696454289302</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\51673741936 ÖMER FARUK SANCAK 8YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>788</xmin>
+					<ymin>469</ymin>
+					<xmax>1030</xmax>
+					<ymax>773</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>698</xmin>
+					<ymin>710</ymin>
+					<xmax>1018</xmax>
+					<ymax>1012</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1544</xmin>
+					<ymin>708</ymin>
+					<xmax>1874</xmax>
+					<ymax>1004</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696454385501</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2560</width>
+		<height>1218</height>
+		<depth>3</depth>
+	</size>
+</doc>

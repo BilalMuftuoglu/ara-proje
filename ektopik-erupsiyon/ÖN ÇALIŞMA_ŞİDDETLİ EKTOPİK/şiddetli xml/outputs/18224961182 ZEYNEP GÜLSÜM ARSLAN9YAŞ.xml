@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\18224961182 ZEYNEP GÜLSÜM ARSLAN9YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1598</xmin>
+					<ymin>454</ymin>
+					<xmax>1930</xmax>
+					<ymax>708</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name>hafif</name>
+				<bndbox>
+					<xmin>686</xmin>
+					<ymin>436</ymin>
+					<xmax>1006</xmax>
+					<ymax>716</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>614</xmin>
+					<ymin>662</ymin>
+					<xmax>962</xmax>
+					<ymax>1000</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>1592</xmin>
+					<ymin>681</ymin>
+					<xmax>1942</xmax>
+					<ymax>1035</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696453878791</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2560</width>
+		<height>1218</height>
+		<depth>3</depth>
+	</size>
+</doc>

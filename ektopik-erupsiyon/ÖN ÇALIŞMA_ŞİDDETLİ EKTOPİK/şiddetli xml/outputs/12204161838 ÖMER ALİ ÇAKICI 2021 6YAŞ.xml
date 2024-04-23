@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\12204161838 ÖMER ALİ ÇAKICI 2021 6YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>694</xmin>
+					<ymin>439</ymin>
+					<xmax>986</xmax>
+					<ymax>751</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>650</xmin>
+					<ymin>683</ymin>
+					<xmax>990</xmax>
+					<ymax>1035</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1538</xmin>
+					<ymin>483</ymin>
+					<xmax>1858</xmax>
+					<ymax>755</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> normal</name>
+				<bndbox>
+					<xmin>1542</xmin>
+					<ymin>694</ymin>
+					<xmax>1942</xmax>
+					<ymax>1036</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696453700817</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2560</width>
+		<height>1218</height>
+		<depth>3</depth>
+	</size>
+</doc>

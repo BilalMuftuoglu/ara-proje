@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\12204161838 ÖMER ALİ ÇAKICI 20227YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1018</xmin>
+					<ymin>646</ymin>
+					<xmax>1320</xmax>
+					<ymax>920</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1648</xmin>
+					<ymin>646</ymin>
+					<xmax>1902</xmax>
+					<ymax>938</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> şiddetli</name>
+				<polygon>
+					<x1>2062</x1>
+					<y1>1209</y1>
+				</polygon>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696453812638</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

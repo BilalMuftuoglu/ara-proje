@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\39394958796 CEMAL ATA ÇATALKAYA 6YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1654</xmin>
+					<ymin>482</ymin>
+					<xmax>1962</xmax>
+					<ymax>742</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> orta</name>
+				<bndbox>
+					<xmin>654</xmin>
+					<ymin>487</ymin>
+					<xmax>924</xmax>
+					<ymax>741</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696454313479</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2560</width>
+		<height>1218</height>
+		<depth>3</depth>
+	</size>
+</doc>

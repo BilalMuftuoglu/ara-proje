@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\20384592878 ÇINAR ALP SAM.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>792</xmin>
+					<ymin>522</ymin>
+					<xmax>1084</xmax>
+					<ymax>830</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>1910</xmin>
+					<ymin>568</ymin>
+					<xmax>2178</xmax>
+					<ymax>812</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> orta</name>
+				<bndbox>
+					<xmin>1868</xmin>
+					<ymin>795</ymin>
+					<xmax>2214</xmax>
+					<ymax>1119</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696453968272</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>

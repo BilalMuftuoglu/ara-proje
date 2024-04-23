@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\Huawei\OneDrive\Masaüstü\ÖN ÇALIŞMA_ŞİDDETLİ EKTOPİK\37658025208 ZEYNEP NEVA İBİLEME 7YAŞ.bmp</path>
+	<outputs>
+		<object>
+			<item>
+				<name> şiddetli</name>
+				<bndbox>
+					<xmin>860</xmin>
+					<ymin>715</ymin>
+					<xmax>1170</xmax>
+					<ymax>979</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> orta</name>
+				<bndbox>
+					<xmin>1790</xmin>
+					<ymin>720</ymin>
+					<xmax>2094</xmax>
+					<ymax>990</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name> orta</name>
+				<bndbox>
+					<xmin>1776</xmin>
+					<ymin>937</ymin>
+					<xmax>2152</xmax>
+					<ymax>1255</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name>hafif</name>
+				<bndbox>
+					<xmin>846</xmin>
+					<ymin>956</ymin>
+					<xmax>1170</xmax>
+					<ymax>1310</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1696454175459</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>2940</width>
+		<height>1435</height>
+		<depth>3</depth>
+	</size>
+</doc>
