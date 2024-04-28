@@ -96,8 +96,9 @@ def randomTest():
 def saveAllOutputs():
     dataset_val = pickle.load(open('dataset_val.pkl', 'rb'))
 
-    real_test_dir = r'C:\Users\doguk\Desktop\araproje\ektopik-erupsiyon-bilal-dogukan\ektopik-erupsiyon\dataset\val'
+    real_test_dir = r'C:\Users\Bilal\Desktop\Ara Proje\ara-proje\ektopik-erupsiyon\dataset\val'
     image_paths = []
+
     for filename in os.listdir(real_test_dir):
         if os.path.splitext(filename)[1].lower() in ['.png', '.jpg', '.jpeg','.bmp']:
             image_paths.append(os.path.join(real_test_dir, filename))
@@ -135,51 +136,78 @@ def confusionMatrix():
     mAP_ = []
     config= inference_config
     config.USE_MINI_MASK = False
+
+    bgBut55 = ""
+    bgBut65 = ""
+    bgBut75 = ""
+    bgBut85 = ""
+
     #compute gt_tot, pred_tot and mAP for each image in the test dataset
-    # for image_id in dataset.image_ids:
-    #     image, image_meta, gt_class_id, gt_bbox, gt_mask =\
-    #         modellib.load_image_gt(dataset, inference_config, image_id)#, #use_mini_mask=False)
+    for image_id in dataset.image_ids:
+        image, image_meta, gt_class_id, gt_bbox, gt_mask =\
+            modellib.load_image_gt(dataset, inference_config, image_id)#, #use_mini_mask=False)
         
-    #     info = dataset.image_info[image_id]
+        info = dataset.image_info[image_id]
 
-    #     # Run the model
-    #     results = model.detect([image], verbose=1)
-    #     newRois, newMasks, class_ids, newScores = filterMasks(results,image)
+        # Run the model
+        results = model.detect([image], verbose=1)
+        newRois, newMasks, class_ids, newScores = filterMasks(results,image)
 
-    #     #compute gt_tot and pred_tot
-        # gt, pred = utils.gt_pred_lists(gt_class_id, gt_bbox, class_ids, newRois)
-    #     gt_tot = np.append(gt_tot, gt)
-    #     pred_tot = np.append(pred_tot, pred)
+        #compute gt_tot and pred_tot
+        gt, pred = utils.gt_pred_lists(gt_class_id, gt_bbox, class_ids, newRois)
+        gt_tot = np.append(gt_tot, gt)
+        pred_tot = np.append(pred_tot, pred)
 
-    #     #precision_, recall_, AP_
-    #     AP_, precision_, recall_, overlap_ = utils.compute_ap(gt_bbox, gt_class_id, gt_mask,
-    #                                         newRois, class_ids, newScores, newMasks)
-    #     #check if the vectors len are equal
-    #     print("the actual len of the gt vect is : ", len(gt_tot))
-    #     print("the actual len of the pred vect is : ", len(pred_tot))
+        #travel in gt and pred lists and find image paths that predicted 55 or 65 or 75 or 85 but it is actually bg
+        for i in range(len(gt)):
+            if(gt[i]==0 and pred[i]!=0):
+                if(pred[i]==1):
+                    bgBut55+=info["path"]+"\n"
+                elif(pred[i]==2):
+                    bgBut65+=info["path"]+"\n"
+                elif(pred[i]==3):
+                    bgBut75+=info["path"]+"\n"
+                elif(pred[i]==4):
+                    bgBut85+=info["path"]+"\n"
 
-    #     mAP_.append(AP_)
-    #     print("Average precision of this image : ",AP_)
-    #     print("The actual mean average precision for the whole images", sum(mAP_)/len(mAP_))
-    #     #print("Ground truth object : "+dataset.class_names[gt])
+        #precision_, recall_, AP_
+        AP_, precision_, recall_, overlap_ = utils.compute_ap(gt_bbox, gt_class_id, gt_mask,
+                                            newRois, class_ids, newScores, newMasks)
+        #check if the vectors len are equal
+        print("the actual len of the gt vect is : ", len(gt_tot))
+        print("the actual len of the pred vect is : ", len(pred_tot))
 
-    #     #print("Predicted object : "+dataset.class_names[pred])
-    #     # for j in range(len(dataset.class_names[gt])):
-    #         # print("Ground truth object : "+j)
+        mAP_.append(AP_)
+        print("Average precision of this image : ",AP_)
+        print("The actual mean average precision for the whole images", sum(mAP_)/len(mAP_))
+        #print("Ground truth object : "+dataset.class_names[gt])
+
+        #print("Predicted object : "+dataset.class_names[pred])
+        # for j in range(len(dataset.class_names[gt])):
+            # print("Ground truth object : "+j)
             
+    #save the paths of the images that predicted 55 or 65 or 75 or 85 but it is actually bg
+    with open("output/bgBut55.txt", "w") as output:
+        output.write(bgBut55)
+    with open("output/bgBut65.txt", "w") as output:
+        output.write(bgBut65)
+    with open("output/bgBut75.txt", "w") as output:
+        output.write(bgBut75)
+    with open("output/bgBut85.txt", "w") as output:
+        output.write(bgBut85)
     
-    # gt_tot=gt_tot.astype(int)
+    gt_tot=gt_tot.astype(int)
     
-    # pred_tot=pred_tot.astype(int)
+    pred_tot=pred_tot.astype(int)
     #save the vectors of gt and pred
 
-    # save_dir = "output"
+    save_dir = "output"
 
-    # gt_pred_tot_json = {"gt_tot" : gt_tot, "pred_tot" : pred_tot}
-    # df = pd.DataFrame(gt_pred_tot_json)
-    # if not os.path.exists(save_dir):
-    #     os.makedirs(save_dir)
-    # df.to_json(os.path.join(save_dir,"gt_pred_test.json"))
+    gt_pred_tot_json = {"gt_tot" : gt_tot, "pred_tot" : pred_tot}
+    df = pd.DataFrame(gt_pred_tot_json)
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    df.to_json(os.path.join(save_dir,"gt_pred_test.json"))
 
     gt_tot = np.array([])
     pred_tot = np.array([])
@@ -200,7 +228,7 @@ def confusionMatrix():
     print("counter2 : ",counter2)
     
 
-    tp,fp,fn,tn=utils.plot_confusion_matrix_from_data(gt_tot,pred_tot,columns=["0","55","65"],fz=18, figsize=(16,16), lw=0.5)
+    tp,fp,fn,tn=utils.plot_confusion_matrix_from_data(gt_tot,pred_tot,columns=["0","55","65","75","85"],fz=18, figsize=(16,16), lw=0.5)
 
     print("tp for each class :",tp)
     print("fp for each class :",fp)
@@ -226,7 +254,7 @@ def drawPrecisionRecallCurve(results,image_id):
         modellib.load_image_gt(dataset_val, config, image_id)
     newRois, newMasks, class_ids, newScores = filterMasks(results,image)
     AP, precisions, recalls, overlaps = utils.compute_ap(gt_bbox, gt_class_id, gt_mask,
-                                          newRois, class_ids, newScores, newMasks)
+                                          newRois, class_ids, newScores, newMasks,iou_threshold=0.5)
     
     print(precisions)
     print(recalls)
@@ -235,36 +263,39 @@ def drawPrecisionRecallCurve(results,image_id):
     visualize.plot_precision_recall(AP, precisions, recalls)
 
 def calculate_mAP():
+    
 
-    path = os.getcwd()
+    #path = os.getcwd()
     #model_tar = "nuclei_datasets.tar.gz"
     #data_path = os.path.join(path + '/dataset')
     #model_path = model.find_last()
     #model_path = os.path.join(path + '\logs\object20240406T1826')
     #weights_path = os.path.join(model_path + '/mask_rcnn_object_0300.h5') #My weights file
-    
 
     config=inference_config
+    config.USE_MINI_MASK = False
     dataset = dataset_val
 
-
-    with tf.device(DEVICE):
-        model = modellib.MaskRCNN(mode="inference", model_dir=DEFAULT_LOGS_DIR, config=config)
+    # with tf.device(DEVICE):
+    #     model = modellib.MaskRCNN(mode="inference", model_dir=DEFAULT_LOGS_DIR, config=config)
 
 
     def compute_batch_ap(image_ids):
         APs = []
+
         for image_id in image_ids:
             # Load image
             image, image_meta, gt_class_id, gt_bbox, gt_mask = modellib.load_image_gt(dataset, config, image_id)
             # Run object detection
-            results = model.detect([image], verbose=0)
+            results = model.detect([image], verbose=1)
             newRois, newMasks, class_ids, newScores = filterMasks(results,image)
             
             AP, precisions, recalls, overlaps = utils.compute_ap(gt_bbox, gt_class_id, gt_mask, newRois, class_ids, newScores, newMasks)
             AP = 1 - AP
             APs.append(AP)
+            
         return APs, precisions, recalls
+    
 
     #dataset.load_nucleus(data_path, 'val')
     #dataset.prepare()
@@ -272,10 +303,14 @@ def calculate_mAP():
     
 
     image_ids = np.random.choice(dataset.image_ids, 25)
-    APs, precisions, recalls = compute_batch_ap(image_ids)
+    APs, precisions, recalls = compute_batch_ap(dataset.image_ids)
+    
     print("mAP @ IoU=50: ", APs)
+    print(precisions)
+    print(recalls)
 
     AP = np.mean(APs)
+    print("mAP: ", AP)
     visualize.plot_precision_recall(AP, precisions, recalls)
     plt.show()
             
@@ -292,7 +327,7 @@ sess = tf.compat.v1.Session(config=config)
 DEVICE = "/gpu:0"  # /cpu:0 or /gpu:0
 
 
-sys.path.append(r"C:\Users\doguk\Desktop\araproje\ektopik-erupsiyon-bilal-dogukan\mrcnn")  # To find local version of the library
+sys.path.append(r"C:\Users\Bilal\Desktop\Ara Proje\ara-proje\ektopik-erupsiyon\mrcnn")  # To find local version of the library
 model = models.Sequential()
 
 # Root directory of the project
@@ -306,7 +341,7 @@ sys.path.append(ROOT_DIR)  # To find local version of the library
 # through the command line argument --logs
 DEFAULT_LOGS_DIR = os.path.join(ROOT_DIR, "logs")
 
-SAVE_DIR = ROOT_DIR + "/test3/"
+SAVE_DIR = ROOT_DIR + "/test/"
 
 
 inference_config = InferenceConfig()
@@ -316,8 +351,8 @@ model = modellib.MaskRCNN(mode="inference",
                           config=inference_config,
                           model_dir=DEFAULT_LOGS_DIR)
 
-#model_path = model.find_last()
-model_path = 'logs/object20240407T0420/mask_rcnn_object_0175.h5'
+model_path = model.find_last()
+#model_path = 'logs\object20240427T1142\mask_rcnn_object_0010.h5'
 print(model_path)
 
 # Load trained weights
@@ -327,11 +362,11 @@ model.load_weights(model_path, by_name=True)
 dataset_val = pickle.load(open('dataset_val.pkl', 'rb'))
 dataset_train= pickle.load(open('dataset_train.pkl', 'rb'))
 
-
+#saveAllOutputs()
 #confusionMatrix()
 #drawPrecisionRecallCurve()
-randomTest()
-#calculate_mAP()
+#randomTest()
+calculate_mAP()
 
 
 

@@ -40,15 +40,13 @@ class CustomConfig(Config):
 
     # We use a GPU with 12GB memory, which can fit two images.
     # Adjust down if you use a smaller GPU.
-    IMAGES_PER_GPU = 1  
+    IMAGES_PER_GPU = 2
     
     # Number of classes (including background)
     #NUM_CLASSES = 1 + 8  # Background + 55, 65, 75, 85, 16, 26, 36, 46
-    NUM_CLASSES = 1 + 2  # Background + 55, 65
+    NUM_CLASSES = 1 + 4  # Background + 55, 65
     # Number of training steps per epoch
-    STEPS_PER_EPOCH = 1
-
-
+    STEPS_PER_EPOCH = 340
     # Skip detections with < 90% confidence
     DETECTION_MIN_CONFIDENCE = 0.9
 
@@ -66,8 +64,8 @@ class CustomDataset(utils.Dataset):
         # Add classes
         self.add_class("object", 1, "55")
         self.add_class("object", 2, "65")
-        # self.add_class("object", 3, "75")
-        # self.add_class("object", 4, "85")
+        self.add_class("object", 3, "75")
+        self.add_class("object", 4, "85")
         # self.add_class("object", 5, "16")
         # self.add_class("object", 6, "26")
         # self.add_class("object", 7, "36")
@@ -95,25 +93,28 @@ class CustomDataset(utils.Dataset):
             #polygons = [r['polygon'] for r in a['outputs']['object']]
             polygons = []
             for r in a['outputs']['object']:
-                if(r['name'] == "55" or r['name'] == "65"):
+                if(r['name'] == "55" or r['name'] == "65" or r['name'] == "75" or r['name'] == "85"):
                     polygons.append(r['polygon'])
               
             
             #objects = [s['name'] for s in a['outputs']['object']]
             objects=[]
             for s in a['outputs']['object']:
-                if(s['name'] == "55" or s['name'] == "65"):
+                if(s['name'] == "55" or s['name'] == "65" or s['name'] == "75" or s['name'] == "85"):
                     objects.append(s['name'])
             
         
            # name_dict = {"55": 1,"65": 2,"75":3,"85":4,"16":5,"26":6,"36":7,"46":8}
-            name_dict = {"55": 1,"65": 2}
+            name_dict = {"55": 1,"65": 2,"75":3,"85":4}
 
             #num_ids = [name_dict[a] for a in objects]
             num_ids = []
             for el in objects:
               if el in name_dict:
                 num_ids.append(name_dict[el])
+
+            print(a['path'])
+            print(num_ids)
 
             parcalar = a['path'].split("\\")
             # En sondaki parçayı alarak resim ismini elde edin
@@ -183,12 +184,12 @@ class CustomDataset(utils.Dataset):
 class InferenceConfig(Config):
     NAME = "object"
 
-    NUM_CLASSES = 1 + 2  # Background + 55, 65
+    NUM_CLASSES = 1 + 4  # Background + 55, 65
     GPU_COUNT = 1
     IMAGES_PER_GPU = 1
     #Minimum probability value to accept a detected instance
     # ROIs below this threshold are skipped
-    DETECTION_MIN_CONFIDENCE = 0.7
+    DETECTION_MIN_CONFIDENCE = 0.9
 
     # Non-maximum suppression threshold for detection
     DETECTION_NMS_THRESHOLD = 0.3

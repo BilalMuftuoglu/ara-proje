@@ -18,8 +18,6 @@
 # with open('ektopik-erupsiyon/dataset/val/val-json/birlesik_veri.json', 'w') as cikti_dosyasi:
 #     cikti_dosyasi.write(birlesik_json)
 
-
-
 import pickle
 import tensorflow as tf
 import warnings
@@ -64,7 +62,7 @@ def train(model):
 
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=1,
+                epochs=30,
                 layers='heads')
 
     return dataset_val,dataset_train
@@ -81,7 +79,7 @@ sess = tf.compat.v1.Session(config=config)
 DEVICE = "/gpu:0"  # /cpu:0 or /gpu:0
 
 
-sys.path.append(r"C:\Users\doguk\Desktop\araproje\ektopik-erupsiyon-bilal-dogukan\mrcnn")  # To find local version of the library
+sys.path.append(r"C:\Users\Bilal\Desktop\Ara Proje\ara-proje\ektopik-erupsiyon\mrcnn")  # To find local version of the library
 model = models.Sequential()
 
 # Root directory of the project
@@ -93,7 +91,7 @@ sys.path.append(ROOT_DIR)  # To find local version of the library
 
 
 # Path to trained weights file
-COCO_WEIGHTS_PATH = os.path.join(r"C:\Users\doguk\Desktop\araproje\ektopik-erupsiyon-bilal-dogukan\ektopik-erupsiyon", "mask_rcnn_coco.h5")
+COCO_WEIGHTS_PATH = os.path.join(r"C:\Users\Bilal\Desktop\Ara Proje\ara-proje\ektopik-erupsiyon", "mask_rcnn_coco.h5")
 
 # Directory to save logs and model checkpoints, if not provided
 # through the command line argument --logs
@@ -115,6 +113,7 @@ model.load_weights(weights_path, by_name=True, exclude=[
 
 
 dataset_val,dataset_train=train(model)
+
 
 with open('dataset_val.pkl', 'wb') as f:
     pickle.dump(dataset_val, f)
